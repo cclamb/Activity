@@ -27,7 +27,7 @@ public final class ListActivityFragment extends ListFragment {
     }
 
     private void populateList(View view) {
-        ListView listView = (ListView) view.findViewById(R.id.listView);
+        // ListView listView = (ListView) view.findViewById(R.id.listView);
 
     }
 }
