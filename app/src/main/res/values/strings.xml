@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_list">Lists</string>
+    <string name="title_activity_fragment_list">list in fragment</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.sampa.activity;
 
+import android.content.Intent;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        activateStrictMode();
     }
 
     @Override
@@ -42,5 +45,32 @@ public class MainActivity extends ActionBarActivity {
 
     public void buttonWidgetsClick(View view) {
         Log.d(CLASS_NAME, "entered MainActivity.buttonWidgetsClick(.)");
+        Intent listIntent = new Intent(
+                getApplicationContext(),
+                ListActivity.class
+        );
+        startActivity(listIntent);
+    }
+
+    private void activateStrictMode() {
+        if (BuildConfig.DEBUG) {
+            StrictMode.setThreadPolicy(
+                    new StrictMode
+                            .ThreadPolicy
+                            .Builder()
+                            .detectAll()
+                            .penaltyLog()
+                            .build()
+            );
+            StrictMode.setVmPolicy(
+                    new StrictMode.
+                            VmPolicy.
+                            Builder()
+                            .detectAll()
+                            .penaltyLog()
+                            .penaltyDeath()
+                            .build()
+            );
+        }
     }
 }
