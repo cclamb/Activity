@@ -12,7 +12,9 @@ public final class Message {
     private String message;
 
     public Message(Date whenCreated, String title, String message) {
-
+        this.whenCreated = whenCreated;
+        this.title = title;
+        this.message = message;
     }
 
     public Date getWhenCreated() {
